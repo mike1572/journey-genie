@@ -122,5 +122,6 @@ export const cities: City[] = [
     { city: "Jakarta, Indonesia", coordinate: [-6.2088, 106.8456] },
     { city: "Manila, Philippines", coordinate: [14.5995, 120.9842] },
     { city: "Kuala Lumpur, Malaysia", coordinate: [3.1390, 101.6869] },
+    { city: "Barcelona, Spain", coordinate: [41.3851, 2.1734] },
 ];
   
