@@ -7,8 +7,8 @@ import Map from './components/Map';
 function App() {
   return (
     <Fragment>
-      <Home />
-      {/* <Questionnaire /> */}
+      {/* <Home /> */}
+      <Questionnaire />
       {/* <Map/> */}
 
 

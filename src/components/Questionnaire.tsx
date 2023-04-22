@@ -1,36 +1,56 @@
-import React from 'react';
-import { List, ListItemButton, ListItemText, Typography, CardContent, Card, Grid } from '@mui/material';
+import React, {useState} from 'react';
+import { List, ListItemButton, ListItemText, Typography, CardContent, Card, Grid, Box, Button } from '@mui/material';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { Height } from '@mui/icons-material';
+import QuestionCard from './QuestionCard';
+import Back from '../images/background.png'
+
 
 function Questionnaire(): JSX.Element {
 
-  const sampleQuestions = [
+  const questions = [
     'What do you like',
-    'Do fish sweat?'
+    'sample Ques 2',
   ]
-  const sampleOptions = [
+  const options = [
     ['Option A', 'Option B', 'Option C', 'None of your business'],
-    ['Not Interested', 'Yes', 'No', 'I dont']
+    ['Not Interested', 'Yes', 'No', 'haha']
   ]
 
+  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
+  function handleOptionSelect(option: string) {
+    const updatedOptions = [...selectedOptions];
+    updatedOptions[currentQuestion] = option;
+    setSelectedOptions(updatedOptions);
+    setCurrentQuestion(currentQuestion + 1);
+  }
   return (
-      <Card sx={{width: '100vh'}}>
-        <CardContent>
-          <Typography variant="h4" align="center" gutterBottom>
-            <b>What is the capital of France?</b>
-          </Typography>
-          <Grid container spacing={2} direction='column' maxWidth='100%' alignItems='center' justifyContent="center">
-            {['New York', 'Paris', 'London', 'Tokyo'].map((option) => (
-              <Grid key={option} item xs={12} sm={6} md={3}>
-                <ListItemButton  onClick={()=>console.log(`nice click, option is ${option}`)}>
-                  <ListItemText primaryTypographyProps={{ align: 'center', width:'80px' }} primary={option} />
-                </ListItemButton>
-              </Grid>
-            ))}
-          </Grid>
-        </CardContent>
-      </Card>
+    <Box
+    display='flex'
+    justifyContent='center'
+    flexDirection='column'
+    sx={{
+      backgroundImage: `linear-gradient(to bottom, rgba(61, 57, 57, 0) 90%, rgb(255, 255, 255, 1)), url(${Back})`,
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      height: '100vh',
+    }}
+    >
+        <Grid container justifyContent="center" >
+        {currentQuestion >= questions.length?
+          // All questions answered, show results or redirect to next page
+          <Typography variant="h4" sx={{color: 'white'}}>All questions answered</Typography>
+          :
+          <QuestionCard
+            question={questions[currentQuestion]}
+            options={options[currentQuestion]}
+            onSelect={handleOptionSelect}
+          />
+        }
+        </Grid>
+    </Box>
   );
 }
 
