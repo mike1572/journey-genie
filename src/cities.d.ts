@@ -34,7 +34,7 @@ export const cities: City[] = [
     { city: "Las Vegas, NV", coordinate: [36.1699, -115.1398] },
     { city: "Louisville, KY", coordinate: [38.2527, -85.7585] },
     { city: "Baltimore, MD", coordinate: [39.2904, -76.6122] },
-    { city: "Miami, FL, USA", coordinate: [25.7617, -80.1918] },
+    { city: "Miami, FL", coordinate: [25.7617, -80.1918] },
     { city: "London, UK", coordinate: [51.5074, -0.1278] },
     { city: "Paris, France", coordinate: [48.8566, 2.3522] },
     { city: "Berlin, Germany", coordinate: [52.5200, 13.4050] },
