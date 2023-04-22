@@ -3,6 +3,7 @@ import { AppBar, Toolbar, IconButton, Typography, Button, Box } from '@mui/mater
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { Height } from '@mui/icons-material';
 import TravelExploreIcon from '@mui/icons-material/TravelExplore';
+import { getSuggestions } from './getSuggestions';
 
 import Back from '../images/background.png'
 
@@ -10,7 +11,7 @@ export default function Home(props: any): JSX.Element {
 
 
   return (
-    <Box 
+    <Box
       sx={{
         backgroundImage: `linear-gradient(to bottom, rgba(61, 57, 57, 0) 50%, rgb(0, 0, 0, 1)), url(${Back})`,
         backgroundRepeat: 'no-repeat',
@@ -19,6 +20,7 @@ export default function Home(props: any): JSX.Element {
         height: '100vh',
       }}
     >
+      <Button onClick={_=> getSuggestions({travelType: 'Explorer', city: 'Los Angeles'}).then(res=>console.log(`suggestions: ${res}`)) }>Test Cohere</Button>
       <AppBar position="static" sx={{backgroundColor: 'rgba(0, 0, 0, 0)'}} elevation={0}>
         <Toolbar >
           <TravelExploreIcon/>

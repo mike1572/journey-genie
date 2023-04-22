@@ -3,6 +3,7 @@ import './App.css';
 import Home from './components/Home';
 import Questionnaire from './components/Questionnaire';
 import Map from './components/Map';
+import { testCohere } from './components/getSuggestions';
 
 function App() {
 
