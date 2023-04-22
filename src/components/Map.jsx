@@ -1,6 +1,4 @@
 
-import L, { LatLngExpression } from "leaflet";
-//import "leaflet/dist/leaflet.css";
 import { MapContainer, Marker, TileLayer, Popup } from "react-leaflet";
 import React, {Fragment, useState} from "react";
 
@@ -44,6 +42,7 @@ export default function Map () {
                             riseOnHover={true}
                             eventHandlers={{
                                 click: () => {
+                                //   getSuggestions(personality, element.city)
                                   setOpenDialog(true)
                                   setChoice(element.city)
                                 },

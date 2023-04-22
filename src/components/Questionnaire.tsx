@@ -1,10 +1,9 @@
 import React, {useState} from 'react';
 import { List, ListItemButton, ListItemText, Typography, CardContent, Card, Grid, Box, Button, AppBar, Toolbar } from '@mui/material';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import TravelExploreIcon from '@mui/icons-material/TravelExplore';
+import { getPersonality } from './getPersonality';
+import { getSuggestions } from './getSuggestions';
 
-
-import { Height } from '@mui/icons-material';
 import QuestionCard from './QuestionCard';
 import Back from '../images/background.png'
 
@@ -12,31 +11,24 @@ import { questions } from '../questions';
 
 
 function Questionnaire(props: any): JSX.Element {
-
-  // const questions = [
-  //   'What do you like',
-  //   'sample Ques 2',
-  // ]
-  // const options = [
-  //   ['Option A', 'Option B', 'Option C', 'None of your business'],
-  //   ['Not Interested', 'Yes', 'No', 'haha']
-  // ]
-
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
-
-
 
   function handleOptionSelect(option: string) {
     const updatedOptions = [...selectedOptions];
     updatedOptions[currentQuestion] = option;
     setSelectedOptions(updatedOptions);
     setCurrentQuestion(currentQuestion + 1);
+
   }
 
   let handleSet = () => {
     console.log(selectedOptions)
     props.changePage()
+    const temp = getPersonality(questions, selectedOptions)
+    temp.then(personality => {
+      console.log(personality)
+    })
   }
 
   return (
