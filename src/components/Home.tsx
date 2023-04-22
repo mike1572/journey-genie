@@ -12,7 +12,7 @@ export default function Home(props: any): JSX.Element {
   return (
     <Box 
       sx={{
-        backgroundImage: `linear-gradient(to bottom, rgba(61, 57, 57, 0) 90%, rgb(255, 255, 255, 1)), url(${Back})`,
+        backgroundImage: `linear-gradient(to bottom, rgba(61, 57, 57, 0) 50%, rgb(0, 0, 0, 1)), url(${Back})`,
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
