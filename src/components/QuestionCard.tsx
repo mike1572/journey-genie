@@ -1,5 +1,13 @@
 import React from 'react';
 import { List, ListItemButton, ListItemText, Typography, CardContent, Card, Grid } from '@mui/material';
+import { styled } from '@mui/material/styles';
+
+const CustomListItemButton = styled(ListItemButton)({
+    marginBottom: '-5px',
+    '&:hover': {
+      backgroundColor: 'rgba(255, 255, 0, 0.1)',
+    },
+  });
 
 interface QuestionCardProps {
     question: string;
@@ -18,10 +26,10 @@ function QuestionCard(props: QuestionCardProps): JSX.Element {
             <Grid container spacing={2} direction='column' maxWidth='100%' alignItems='center' justifyContent="center">
             {options.map((option) => (
                 <Grid key={option} item xs={12} sm={6} md={3} >
-                <ListItemButton  onClick={()=>onSelect(option)}>
+                <CustomListItemButton  onClick={()=>onSelect(option)} sx={{mx:'xs: 10, md: 50, lg: 70' }}>
                     <ListItemText primaryTypographyProps={{ align: 'center', width:'200px', color:'white', fontWeight: 'bold' }} primary={option}
                     />
-                </ListItemButton>
+                </CustomListItemButton>
                 </Grid>
             ))}
             </Grid>
