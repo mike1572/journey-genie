@@ -7,7 +7,7 @@ import Map from './components/Map';
 function App() {
 
 
-  let [currentPage, setCurrentPage] = useState<number>(2)
+  let [currentPage, setCurrentPage] = useState<number>(0)
 
   return (
     <Fragment>
@@ -17,7 +17,7 @@ function App() {
       }
 
       {
-        currentPage === 1 && <Questionnaire/>
+        currentPage === 1 && <Questionnaire changePage={() => setCurrentPage(2)}/>
       }
 
       {

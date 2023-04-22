@@ -33,8 +33,8 @@ export default function Home(props: any): JSX.Element {
         <Typography variant="h3" sx={{color: 'white', mx: {xs: 10, md: 50, lg: 70}}}>
           <b>Place Where Your Adventure Awaits</b>
         </Typography>
-        <Typography variant="h6" sx={{textAlign: 'center', color: 'white', mx: {xs: 10, md: 50, lg: 70}, my: 2}}>
-          Get tailored recommendations of places to visit based on your mood and personality!
+        <Typography variant="body1" sx={{textAlign: 'center', color: 'white', mx: {xs: 10, md: 50, lg: 70}, my: 2}}>
+          Discover the best of any major American city in just 2 steps! Answer a few questions about you and choose a location on the map. Voilà! Get 5 amazing recommendations tailored just for you. Start exploring today!
         </Typography>
         <Button onClick={props.changePage} variant="contained" style={{ marginTop: '20px', backgroundColor: 'white', color: 'black', fontWeight: 700, fontSize: 15, borderRadius: 5 }}>
           Start
