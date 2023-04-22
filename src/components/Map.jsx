@@ -1,6 +1,4 @@
 
-import L, { LatLngExpression } from "leaflet";
-//import "leaflet/dist/leaflet.css";
 import { MapContainer, Marker, TileLayer, Popup } from "react-leaflet";
 import React, {Fragment, useState} from "react";
 
@@ -8,6 +6,7 @@ import {Box, AppBar, Toolbar, Typography} from '@mui/material'
 import { cities } from "../cities.d.ts";
 import ModalContent from "./ModalContent.jsx";
 import TravelExploreIcon from '@mui/icons-material/TravelExplore';
+import { getSuggestions } from "./getSuggestions.js";
 
 
 export default function Map () {
@@ -44,6 +43,7 @@ export default function Map () {
                             riseOnHover={true}
                             eventHandlers={{
                                 click: () => {
+                                //   getSuggestions(personality, element.city)
                                   setOpenDialog(true)
                                   setChoice(element.city)
                                 },
