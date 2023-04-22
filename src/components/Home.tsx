@@ -28,13 +28,12 @@ export default function Home(props: any): JSX.Element {
         </Toolbar>
       </AppBar>
 
-
       <div style={{ textAlign: 'center', marginTop: '50px',display:'flex', justifyContent:'center', height:'70vh', alignItems: 'center', flexDirection:'column'}}>
         <Typography variant="h3" sx={{color: 'white', mx: {xs: 10, md: 40, lg: 60}}}>
           <b>Place Where Your Adventure Awaits</b>
         </Typography>
         <Typography variant="body1" sx={{textAlign: 'center', color: 'white', mx: {xs: 10, md: 40, lg: 60}, my: 2}}>
-          Discover the best of any major American city in just 2 steps! Answer a few questions about you and choose a location on the map. Voilà! Get 5 amazing recommendations tailored just for you. Start exploring today!
+          Discover the best of any major city in just 2 steps! Answer a few questions about you and choose a location on the map. Voilà! Get 5 amazing recommendations tailored just for you. Start exploring today!
         </Typography>
         <Button onClick={props.changePage} variant="contained" style={{ marginTop: '20px', backgroundColor: 'white', color: 'black', fontWeight: 700, fontSize: 15, borderRadius: 5 }}>
           Start
