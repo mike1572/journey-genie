@@ -6,7 +6,6 @@ import {Box, AppBar, Toolbar, Typography} from '@mui/material'
 import { cities } from "../cities.d.ts";
 import ModalContent from "./ModalContent.jsx";
 import TravelExploreIcon from '@mui/icons-material/TravelExplore';
-import { getSuggestions } from "./getSuggestions.js";
 
 
 export default function Map () {

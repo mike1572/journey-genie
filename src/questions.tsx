@@ -1,5 +1,5 @@
 
-type Question = {
+export type Question = {
     question: string;
     answer_options: string[]
 }
