@@ -7,9 +7,9 @@ import Map from './components/Map';
 function App() {
   return (
     <Fragment>
-      {/* <Home /> */}
+      <Home />
       {/* <Questionnaire /> */}
-      <Map/>
+      {/* <Map/> */}
 
 
     </Fragment>
