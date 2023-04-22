@@ -68,7 +68,9 @@ function Questionnaire(props: any): JSX.Element {
             // All questions answered, show results or redirect to next page
             <Box>
               <Typography variant="h4" sx={{color: 'white'}}>You're all set!</Typography>
-              <Button onClick={handleSet} variant="contained" sx={{mt: 2, backgroundColor: 'black', color: 'white', borderRadius: 1}}>
+              <Button onClick={handleSet} variant="contained" sx={{mt: 2, backgroundColor: 'black', color: 'white', borderRadius: 1, '&:hover': {
+                backgroundColor: '#1a1a1a'
+              }}}>
                 Pick a Destination
               </Button>
             </Box>
