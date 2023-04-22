@@ -53,7 +53,6 @@ function Questionnaire(props: any): JSX.Element {
       }}
     >
 
-
         <AppBar position="static" sx={{backgroundColor: 'rgba(0, 0, 0, 0)'}} elevation={0}>
           <Toolbar >
             <TravelExploreIcon/>
@@ -64,23 +63,22 @@ function Questionnaire(props: any): JSX.Element {
         </AppBar>
         <div style={{ textAlign: 'center', marginTop: '50px',display:'flex', justifyContent:'center', height:'70vh', alignItems: 'center', flexDirection:'column'}}>
 
-
         <Box sx={{alignItems: 'center'}}>
-        {currentQuestion >= questions.length?
-          // All questions answered, show results or redirect to next page
-          <Box>
-            <Typography variant="h4" sx={{color: 'white'}}>You're all set!</Typography>
-            <Button onClick={handleSet} variant="contained" sx={{mt: 2, backgroundColor: 'black', color: 'white', borderRadius: 1}}>
-              Pick a Destination
-            </Button>
-          </Box>
-          :
-          <QuestionCard
-            question={questions[currentQuestion].question}
-            options={questions[currentQuestion].answer_options}
-            onSelect={handleOptionSelect}
-          />
-        }
+          {currentQuestion >= questions.length?
+            // All questions answered, show results or redirect to next page
+            <Box>
+              <Typography variant="h4" sx={{color: 'white'}}>You're all set!</Typography>
+              <Button onClick={handleSet} variant="contained" sx={{mt: 2, backgroundColor: 'black', color: 'white', borderRadius: 1}}>
+                Pick a Destination
+              </Button>
+            </Box>
+            :
+            <QuestionCard
+              question={questions[currentQuestion].question}
+              options={questions[currentQuestion].answer_options}
+              onSelect={handleOptionSelect}
+            />
+          }
         </Box>
         </div>
 
