@@ -6,7 +6,9 @@ import TravelExploreIcon from '@mui/icons-material/TravelExplore';
 
 import Back from '../images/background.png'
 
-function Home(): JSX.Element {
+export default function Home(props: any): JSX.Element {
+
+
   return (
     <Box 
       sx={{
@@ -34,7 +36,7 @@ function Home(): JSX.Element {
         <Typography variant="h6" sx={{textAlign: 'center', color: 'white', mx: {xs: 10, md: 50, lg: 70}, my: 2}}>
           Get tailored recommendations of places to visit based on your mood and personality!
         </Typography>
-        <Button variant="contained" style={{ marginTop: '20px', backgroundColor: 'white', color: 'black', fontWeight: 700, fontSize: 15, borderRadius: 5 }}>
+        <Button onClick={props.changePage} variant="contained" style={{ marginTop: '20px', backgroundColor: 'white', color: 'black', fontWeight: 700, fontSize: 15, borderRadius: 5 }}>
           Start
         </Button>
       </div>
@@ -42,4 +44,3 @@ function Home(): JSX.Element {
   );
 }
 
-export default Home;
