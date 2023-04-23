@@ -77,7 +77,7 @@ export const cities: City[] = [
     { city: "Reykjavik, Iceland", coordinate: [64.1466, -21.9426] },
     { city: "Oslo, Norway", coordinate: [59.9139, 10.7522] },
     { city: "Edinburgh, United Kingdom", coordinate: [55.9533, -3.1883] },
-    { city: "Hong Kong, China", coordinate: [22.3193, 114.1694] }
+    { city: "Hong Kong, China", coordinate: [22.3193, 114.1694] },
     { city: "Stockholm, Sweden", coordinate: [59.3293, 18.0686] },
     { city: "Copenhagen, Denmark", coordinate: [55.6761, 12.5683] },
     { city: "Helsinki, Finland", coordinate: [60.1699, 24.9384] },
@@ -107,7 +107,7 @@ export const cities: City[] = [
     { city: "Riyadh, Saudi Arabia", coordinate: [24.7136, 46.6753] },
     { city: "Jeddah, Saudi Arabia", coordinate: [21.4858, 39.1925] },
     { city: "Manama, Bahrain", coordinate: [26.2285, 50.5860] },
-    { city: "Cape Town, South Africa", coordinate: [-33.9249, 18.4241] }
+    { city: "Cape Town, South Africa", coordinate: [-33.9249, 18.4241] },
     { city: "Kuwait City, Kuwait", coordinate: [29.3759, 47.9774] },
     { city: "Tehran, Iran", coordinate: [35.6892, 51.3890] },
     { city: "Baghdad, Iraq", coordinate: [33.3152, 44.3661] },
