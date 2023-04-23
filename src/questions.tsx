@@ -24,12 +24,12 @@ export let questions: Question[] = [
         ]
         },
     {
-    question: "What type of accommodation do you prefer?",
+    question: "How important is socializing and meeting new people to you when traveling?",
     answer_options: [
-        "Hostels or camping sites",
-        "Luxury resorts and villas",
-        "Boutique hotels and B&Bs",
-        "Budget hotels and motels"
+        "Very important, I love to meet and make new friends",
+        "Somewhat important, I like to socialize but also enjoy alone time",
+        "Not important, I prefer to focus on my own experiences and activities",
+        "I am shy and find it difficult to socialize with strangers."
     ]
     },
     {

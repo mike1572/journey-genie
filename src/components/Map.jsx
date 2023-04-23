@@ -8,7 +8,7 @@ import ModalContent from "./ModalContent.jsx";
 import TravelExploreIcon from '@mui/icons-material/TravelExplore';
 
 
-export default function Map () {
+export default function Map (props) {
 
     const position= [37.4925,-100];
     const zoom = 4.5;
@@ -28,7 +28,7 @@ export default function Map () {
             </AppBar>
         <Box>
         
-            <ModalContent open={openDialog} close={() => setOpenDialog(false)} choice={choice} />
+            <ModalContent open={openDialog} close={() => setOpenDialog(false)} choice={choice} personality={props.personality} />
             <MapContainer center={position} zoom={zoom} scrollWheelZoom={false} style={{height: '91.5vh'}}>
                 <TileLayer
                     attribution="&copy; <a href='http://osm.org/copyright'>OpenStreetMap</a> contributors"
@@ -42,7 +42,6 @@ export default function Map () {
                             riseOnHover={true}
                             eventHandlers={{
                                 click: () => {
-                                //   getSuggestions(personality, element.city)
                                   setOpenDialog(true)
                                   setChoice(element.city)
                                 },
