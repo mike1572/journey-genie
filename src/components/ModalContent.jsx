@@ -61,8 +61,6 @@ export default function ModalContent (props) {
     let generateImage = async () => {
         const apiKey = process.env.REACT_APP_DALLE_API_KEY;
 
-        console.log(apiKey)
-
     
         const response = await fetch('https://api.openai.com/v1/images/generations', {
           method: 'POST',

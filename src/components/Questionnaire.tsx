@@ -24,12 +24,10 @@ function Questionnaire(props: any): JSX.Element {
   }
 
   let handleSet = () => {
-    console.log(selectedOptions)
 
     setLoading(true)
     const temp = getPersonality(questions, selectedOptions)
     temp.then(personality => {
-      console.log(personality)
       props.changePersonality(personality)
       props.changePage()
       setLoading(false)
