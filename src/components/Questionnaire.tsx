@@ -28,7 +28,10 @@ function Questionnaire(props: any): JSX.Element {
     const temp = getPersonality(questions, selectedOptions)
     temp.then(personality => {
       console.log(personality)
-    })
+      getSuggestions(personality, 'Los Angeles').then(suggestions => {
+        console.log(suggestions)
+      });
+    });
   }
 
   return (

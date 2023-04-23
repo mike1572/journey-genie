@@ -20,7 +20,6 @@ export default function Home(props: any): JSX.Element {
         height: '100vh',
       }}
     >
-      <Button onClick={_=> getSuggestions('Explorer', 'Los Angeles').then(res=>console.log(`suggestions: ${res}`)) }>Test Cohere</Button>
       <AppBar position="static" sx={{backgroundColor: 'rgba(0, 0, 0, 0)'}} elevation={0}>
         <Toolbar >
           <TravelExploreIcon/>
