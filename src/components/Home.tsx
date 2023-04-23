@@ -1,14 +1,10 @@
 import React from 'react';
-import { AppBar, Toolbar, IconButton, Typography, Button, Box } from '@mui/material';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import { Height } from '@mui/icons-material';
+import { AppBar, Toolbar, Typography, Button, Box } from '@mui/material';
 import TravelExploreIcon from '@mui/icons-material/TravelExplore';
-import { getSuggestions } from './getSuggestions';
 
 import Back from '../images/background.png'
 
 export default function Home(props: any): JSX.Element {
-
 
   return (
     <Box
@@ -20,7 +16,6 @@ export default function Home(props: any): JSX.Element {
         height: '100vh',
       }}
     >
-      <Button onClick={_=> getSuggestions('Explorer', 'Los Angeles').then(res=>console.log(`suggestions: ${res}`)) }>Test Cohere</Button>
       <AppBar position="static" sx={{backgroundColor: 'rgba(0, 0, 0, 0)'}} elevation={0}>
         <Toolbar >
           <TravelExploreIcon/>

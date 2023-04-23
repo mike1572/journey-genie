@@ -7,7 +7,7 @@ export async function getPersonality( questions: Question[], answers: string[] )
     }
 
     const questionArr = questions.map(q=> q.question);
-    const API_KEY_COHERE = 'j6QSQ6XQpthi4PyvgoYzbzYLdFHiOhHr0dO0kvFk';
+    const API_KEY_COHERE = process.env.REACT_APP_API_KEY_COHERE;
 
     const qaList = [];
     for (let i = 0; i < questionArr.length; i++) {
@@ -43,7 +43,7 @@ export async function getPersonality( questions: Question[], answers: string[] )
         });
         const suggestions = response.json().then((res) => {
           var generatedText = res.generations[0].text;
-          console.log('generated text', generatedText)
+          //console.log('generated text', generatedText)
           return generatedText
         });
         return suggestions;

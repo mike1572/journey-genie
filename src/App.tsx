@@ -8,6 +8,7 @@ function App() {
 
 
   let [currentPage, setCurrentPage] = useState<number>(0)
+  let [personality, setPersonality] = useState<string>('')
 
   return (
     <Fragment>
@@ -17,11 +18,11 @@ function App() {
       }
 
       {
-        currentPage === 1 && <Questionnaire changePage={() => setCurrentPage(2)}/>
+        currentPage === 1 && <Questionnaire changePage={() => setCurrentPage(2)} changePersonality={setPersonality}/>
       }
 
       {
-        currentPage === 2 && <Map/>
+        currentPage === 2 && <Map personality={personality}/>
       }
 
 

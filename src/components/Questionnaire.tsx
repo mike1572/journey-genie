@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { List, ListItemButton, ListItemText, Typography, CardContent, Card, Grid, Box, Button, AppBar, Toolbar } from '@mui/material';
+import { List, ListItemButton, ListItemText, Typography, CardContent, Card, Grid, Box, Button, AppBar, Toolbar, CircularProgress } from '@mui/material';
 import TravelExploreIcon from '@mui/icons-material/TravelExplore';
 import { getPersonality } from './getPersonality';
 import { getSuggestions } from './getSuggestions';
@@ -13,6 +13,7 @@ import { questions } from '../questions';
 function Questionnaire(props: any): JSX.Element {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
+  const [loading, setLoading] = useState<boolean>(false)
 
   function handleOptionSelect(option: string) {
     const updatedOptions = [...selectedOptions];
@@ -24,15 +25,18 @@ function Questionnaire(props: any): JSX.Element {
 
   let handleSet = () => {
     console.log(selectedOptions)
-    props.changePage()
+
+    setLoading(true)
     const temp = getPersonality(questions, selectedOptions)
     temp.then(personality => {
       console.log(personality)
+      props.changePersonality(personality)
+      props.changePage()
+      setLoading(false)
     })
   }
 
   return (
-
 
     <Box
  
@@ -60,10 +64,18 @@ function Questionnaire(props: any): JSX.Element {
             // All questions answered, show results or redirect to next page
             <Box>
               <Typography variant="h4" sx={{color: 'white'}}>You're all set!</Typography>
-              <Button onClick={handleSet} variant="contained" sx={{mt: 2, backgroundColor: 'black', color: 'white', borderRadius: 1, '&:hover': {
+              <Button disabled={loading} onClick={handleSet} variant="contained" sx={{mt: 2, backgroundColor: 'black', color: 'white', width: 200, borderRadius: 1, '&:hover': {
                 backgroundColor: '#1a1a1a'
-              }}}>
-                Pick a Destination
+              }, '&:disabled': {
+                backgroundColor: '#1a1a1a', color: 'white'
+              }}
+              
+              }>
+                {
+                  loading ? 
+                  <CircularProgress size={25} sx={{color: 'white'}}/>: 
+                  'Pick a Destination'
+                } 
               </Button>
             </Box>
             :
