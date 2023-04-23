@@ -40,6 +40,7 @@ export const cities: City[] = [
     { city: "Zurich, Switzerland", coordinate: [47.3769, 8.5417] },
     { city: "Paris, France", coordinate: [48.8566, 2.3522] },
     { city: "Berlin, Germany", coordinate: [52.5200, 13.4050] },
+    { city: "Amsterdam, Netherlands", coordinate: [52.3667, 4.8945] },
     { city: "Lisbon, Portugal", coordinate: [38.7223, -9.1393] },
     { city: "Madrid, Spain", coordinate: [40.4168, -3.7038] },
     { city: "Rome, Italy", coordinate: [41.9028, 12.4964] },
